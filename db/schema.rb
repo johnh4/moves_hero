@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710192653) do
+ActiveRecord::Schema.define(version: 20140712183553) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140710192653) do
     t.string   "provider"
     t.string   "uid"
     t.string   "moves_token"
-    t.integer  "steps_today"
-    t.integer  "steps_month"
+    t.integer  "steps_today",            default: 0
+    t.integer  "steps_month",            default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

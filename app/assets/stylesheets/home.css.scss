@@ -1,3 +1,143 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$magenta: rgb(237,103,214);
+$blue: rgb(0,205,236);
+$green: rgb(33,210,96);
+$green-light: rgb(33,230,96);
+
+.green-button {
+	height: auto;
+	width: auto;
+	display: inline-block;
+	background: $green;
+	border-radius: 3px;
+	color: white;
+	padding: 4px 8px;
+	position: relative;
+	left: -15px;
+}
+
+/************ HEADER ***********/
+.header {
+	//margin-bottom: 30px;
+	margin-top: 20px;
+	.nav {
+		//width: 100%;
+		text-align: center;
+	}
+	ul.nav-pills li.active {
+		background: $green;
+	}
+}
+/************ TABLE ************/
+.moves-table {
+	color: rgb(102,102,102);
+	max-width: 100%;
+	//width: 100px;
+	width: 100%;
+	tr {
+		margin-bottom: 10px;
+		&.table-header {
+			border-bottom: 1px solid #eaeaea;
+		}
+		&.data-rows {
+			border-bottom: 1px solid #dadada;
+			border-bottom: 1px solid $green;
+			//border-right: 1px solid $green;
+			//border-left: 1px solid $green;
+		}
+		&:first-child {
+			background: black;
+			background: $blue;
+			color: white;
+		}
+		&:nth-child(2n){
+			//background: rgb(33,210,96);
+			//color: white;
+		}
+		&:nth-child(2n+3){
+			//background: rgb(33,230,96);
+			//color: white;
+		}
+	}
+	td {
+		text-align: center;
+		//padding-right: 20px;
+		//padding: 20px 40px;
+		//border-right: 1px solid #eaeaea;
+		padding: 20px 0px;
+	}
+}
+/************ HEADLINES ********/
+h2.headline {
+	background: navy;
+	background: black;
+	color: white;
+	color: $magenta;
+	padding: 2px 8px;
+	box-shadow: 0px 0px 1px black;
+	text-align: center;
+}
+/********* LEADERBOARD *********/
+.leaderboard {
+	margin-left: auto;
+	margin-right: auto;
+}
+/*********** CHART *************/
+#chart-link {
+	display: none;
+}
+#myChart {
+	height: 400px;
+	max-width: 100%;
+	width: 1000px;
+}
+/******** LINK ACCOUNT ********/
+.jumbotron {
+	margin-top: 20px;
+	background: none !important;
+	h1, p {
+		text-align: center;
+	}
+}
+#link-button {
+	//display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.moves-pic {
+	height: 300px;
+}
+#directions {
+	h4 {
+		text-align: center;
+		font-weight: normal;
+	}
+	p {
+		text-align: center;
+	}
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+/********** LANDING *********/
+.landing.jumbotron {
+	.green-button {
+		width: 49% !important;
+		text-align: center;
+	}
+}
+/****** AUTHENTICATION ******/
+.authentication {
+	text-align: center;
+	.btn {
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+}

@@ -1,37 +1,12 @@
-<%= link_to "Link Account to Moves", user_omniauth_authorize_path(:moves) %><br>
-<% if @moves.presence %>
-	<p>
-		profile: <%= @moves.profile %> <br><br>
-		daily_summary(Time.now): <%= @moves.daily_summary(Time.now) %><br><br>
-		daily_summary[0]['summary']['steps']: <%= @moves.daily_summary[0]['summary'][0]['steps'] %>
-		daily_summary[0]['summary']['']: <%= @moves.daily_summary[0]['summary'][0]['steps'] %>
-		<br> <br>
-		<p>last month: <%= @last_month %></p>
-		<h3>daily summary</h3>
-		<% @summary.each do |day| %>
-			date: <%= day['date'] %> <br>
-			<% day['summary'].each do |summary| %>
-				activity: <%= summary['activity'] %> <br>
-				duration: <%= summary['duration'] %> seconds <br>
-				distance: <%= summary['distance'] %> meters <br>
-				<% if summary['steps'].presence %>
-					steps: <%= summary['steps'] %> steps <br>
-				<% end %>
-			<br>
-			<% end %>
-		<% end %>
-		<h3>monthly summary</h3>
-		<% @last_month.each do |day| %>
-			date: <%= day['date'] %> <br>
-			<% day['summary'].each do |summary| %>
-				activity: <%= summary['activity'] %> <br>
-				duration: <%= summary['duration'] %> seconds <br>
-				distance: <%= summary['distance'] %> meters <br>
-				<% if summary['steps'].presence %>
-					steps: <%= summary['steps'] %> steps <br>
-				<% end %>
-			<br>
-			<% end %>
-		<% end %>
-	</p>
+<% if user_signed_in? %>
+	<% if current_user.valid_token? %>	
+		<!-- display main page -->
+		<%= render 'moves_main' %>
+	<% else %>
+		<!-- link your account to moves -->
+		<%= render 'link_account' %>
+	<% end %>
+<% else %>
+	<!-- landing page, sign in/up -->
+	<%= render 'landing' %>
 <% end %>

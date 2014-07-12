@@ -1,0 +1,16 @@
+<div class="col-md-6 col-lg-6">
+	<h2 class="headline">Daily Leaderboard</h2>
+	<table class="moves-table leaderboard">
+		<tr class="table-header">
+			<td>Rank</td>
+			<td>Email</td>
+			<td class="lb-sort">Coins</td>
+		</tr>
+		<div id="leaderboard-data">
+			<!--
+			<%= render partial: 'user_by_coins', collection: @movers_daily %>
+			-->
+			<%= render partial: 'user_by_steps', collection: @movers_daily %>
+		</div>
+	</table>
+</div>

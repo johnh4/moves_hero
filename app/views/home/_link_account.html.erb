@@ -1,0 +1,48 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Welcome to Moves Hero!</h1>
+		<p>Now link your account to the mobile Moves app.</p>
+		<%= link_to "Link Your Account to Moves", user_omniauth_authorize_path(:moves), 
+				id: "link-button", class: "green-button" %>
+	</div>
+</div>
+<div id="directions">
+	<h4>Open the Moves app, and if you have an iPhone:</h4>
+	<ol>
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-md-4">
+				<li>
+					<%= image_tag "app_1.png", class: "moves-pic" %>
+					<p>Go to Moves Settings by clicking the M in the bottom right</p>
+				</li>
+			</div>
+			<div class="col-sm-4 col-md-4 col-md-4">
+				<li>
+					<%= image_tag "app_2.png", class: "moves-pic" %>
+					<p>Select Connected Apps</p>
+				</li>
+			</div>
+			<div class="col-sm-4 col-md-4 col-md-4">
+				<li>
+					<%= image_tag "app_3.png", class: "moves-pic" %>
+					<p>Select Enter Pin in the top right</p>
+				</li>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-md-6">
+				<li>
+					<%= image_tag "app_4.png", class: "moves-pic" %>
+					<p>Input the PIN Code, which you receive by clicking the green
+						"Link Your Account to Moves" button on this site above</p>
+				</li>
+			</div>
+			<div class="col-sm-6 col-md-6 col-md-6">
+				<li>
+					<%= image_tag "app_5.png", class: "moves-pic" %>
+					<p>Approve the Permission Request</p>
+				</li>
+			</div>
+		</div>
+	</ol>
+</div>
