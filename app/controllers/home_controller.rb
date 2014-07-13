@@ -26,6 +26,7 @@ class HomeController < ApplicationController
 			puts "@month_days before: #{@month_days}"
 			puts "@month_days after: #{@month_days}"
 			puts "@moves.profile: #{@moves.profile}"
+			puts "@moves.month_summary(2014-07): #{@moves.daily_summary('2014-07')}"
 			puts "@moves.daily_summary(Time.now): #{@moves.daily_summary(Time.now)}"
 
 			@walk_month_summary = @moves.walk_month_summary.reverse

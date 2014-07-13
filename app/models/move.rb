@@ -1,4 +1,5 @@
 class Move
+	include ActiveModel::Model
 	include HomeHelper
 	def initialize(access_token)
 		@moves = Moves::Client.new(access_token)
