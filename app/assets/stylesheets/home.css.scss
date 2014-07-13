@@ -7,6 +7,7 @@ $blue: rgb(0,205,236);
 $green: rgb(33,210,96);
 $green-light: rgb(33,230,96);
 
+/*********** GENERAL ***********/
 .green-button {
 	height: auto;
 	width: auto;
@@ -17,6 +18,12 @@ $green-light: rgb(33,230,96);
 	padding: 4px 8px;
 	position: relative;
 	left: -15px;
+	transition: all .2s;
+	&:hover {
+		text-decoration: none;
+		background: $green-light;
+		color: white;
+	}
 }
 
 /************ HEADER ***********/
