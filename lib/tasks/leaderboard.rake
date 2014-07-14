@@ -10,7 +10,6 @@ namespace :leaderboard do
 				moves = Move.new(mover.moves_token)
 
 				#today's steps
-				puts "moves.steps_today: #{moves.steps_today}"
 				today_steps = moves.steps_today.nil? ? 0 : moves.steps_today
 				puts "today_steps: #{today_steps}"
 				mover.update!(steps_today: today_steps)

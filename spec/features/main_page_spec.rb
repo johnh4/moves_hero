@@ -56,7 +56,7 @@ feature "Main page" do
 	end
 	scenario "should have the day's steps" do
 		within('#daily-leaderboard') do
-			expect(page).to have_content(132)
+			expect(page).to have_content(1320)
 		end
 		expect(page).to have_content(@user.steps_today)
 		expect(page).to have_content(@user.steps_month)
