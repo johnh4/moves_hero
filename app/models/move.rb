@@ -1,13 +1,18 @@
 class Move
 	include ActiveModel::Model
 	include HomeHelper
+
 	def initialize(access_token)
 		@moves = Moves::Client.new(access_token)
 	end
 
 	def steps_today
-		@moves.daily_summary[0]['summary'].find { |a| a['group'] == 'walking' }['steps']
+		summary = @moves.daily_summary[0]['summary']
+		unless summary.nil?
+			summary.find { |a| a['group'] == 'walking' }['steps']
+		end
 	end
+
 	def daily_summary(timeframe = nil)
 		timeframe.nil? ? @moves.daily_summary : @moves.daily_summary(timeframe)
 	end
