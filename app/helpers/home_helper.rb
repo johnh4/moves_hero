@@ -1,10 +1,10 @@
 module HomeHelper
 	def coins_today(user)
-		user.steps_today * 10
+		user.steps_today.nil? ? 0 : user.steps_today * 10
 	end
 
 	def coins_this_month(user)
-		user.steps_month * 10
+		user.steps_month.nil? ? 0 : user.steps_month * 10
 	end
 
 	def short_date(date)
